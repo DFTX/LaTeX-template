@@ -1,0 +1,63 @@
+
+\documentclass[11pt,a4paper,onecolumn]{article}
+\usepackage{qc}
+
+
+\begin{document}
+
+%---------预定设置区----------
+\title{%
+  \heiti \huge \vspace{-50pt} 量子化学原理与应用笔记 \\ \LaTeX 模板}
+
+  \maketitle
+\vspace{-10pt}
+
+%\tableofcontents
+
+%---------正  文  区----------
+
+%\subsection{习题 1：算符乘法运算}
+
+\begin{exercise}{1}
+	
+$ \bullet $
+请简化下式定义的算符 
+
+$ \bullet $
+请计算对易子 $ \qty[x^3, \dv{x}], \qty[\dv{x}, 5x^2+3x+4] $
+\end{exercise}
+
+
+\begin{solution}
+  \tcbemph{化简 $\hat A$} \lipsum[3]
+  
+  \begin{warning}
+    \tcbemph{错误证明}
+    \begin{align}
+      \hat B &= \hat A^2 = (x \partial_x + 1)^2 \notag\\
+      &= (x \partial_x)^2 + 2 x \partial_x + 1 \notag\\
+      &\mathrel{\color{OrangeRed}=} x^2 \partial_x^2 + 2 x \partial_x + 1
+    \end{align}
+  \end{warning}
+ 
+  \tcbline
+  \lipsum[4]
+\end{solution}
+
+\vspace{30pt}~\\
+
+\begin{exercise}{2}
+	算符的左右分配律：
+\end{exercise}
+
+\begin{solution}
+\lipsum[5]
+\end{solution}
+
+\vspace{30pt}~\\
+
+
+
+
+
+\end{document}
