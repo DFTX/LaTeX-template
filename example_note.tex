@@ -1,0 +1,122 @@
+
+\documentclass[11pt,a4paper,onecolumn]{article}
+\usepackage{qc}
+
+%---------设定区结束----------
+\begin{document}
+\bibliographystyle{JAmChemSoc}
+
+%---------预定设置区----------
+\title{%
+  \heiti \huge \vspace{-50pt} 量子化学原理与应用笔记 \\ \LaTeX 模板}
+
+  \maketitle
+\vspace{-10pt}
+
+%\tableofcontents
+
+%---------正  文  区----------
+
+\section{公式}
+
+~\\
+有编号公式
+\begin{equation}
+  \hat A u = v
+\end{equation}
+无编号公式
+\begin{equation*}
+  c u, f u, \frac{\partial}{\partial x} u, \sqrt{u}
+\end{equation*}
+多行公式，分别编号
+\begin{align}
+\ev{A} &= \int \psi^* \hat A \psi \dd x \\
+\ev{A}^* &= \qty(\int \psi^* \hat A \psi \dd x )^* = \int (\hat A \psi)^* \psi \dd x
+\end{align}
+多行公式，只编号一次
+\begin{align}
+\pdv{t} |\Psi(x,t)|^2  &= \pdv{\Psi^*}{t}\Psi + \Psi^*\pdv{\Psi}{t}  
+= \Psi \qty(-\dfrac{i\hbar}{2m} \pdv[2]{x} \Psi + \dfrac{i}{\hbar} V(x) \Psi) + \Psi^* \qty(\dfrac{i\hbar}{2m} \pdv[2]{x} \Psi - \dfrac{i}{\hbar} V(x) \Psi) \notag\\
+&= \dfrac{i\hbar}{2m} \qty[\Psi^*\pdv[2]{\Psi}{x} - \Psi\pdv[2]{\Psi^*}{x}] \notag\\
+&= \dfrac{i\hbar}{2m} \pdv{x} \qty[\Psi^*\pdv{\Psi}{x} - \Psi\pdv{\Psi^*}{x}]
+\end{align}
+有编号列表
+\begin{enumerate}[nosep]
+	\item 和与差
+	\item 乘法
+	\item 等价算符
+	\item 基本算符
+	\item 逆
+	\item 对易子
+\end{enumerate}
+无编号列表
+	\begin{itemize}[nosep]
+	\item 三维：$ s < \frac{3}{2} $
+	\item  二维：$ s < 1 $
+	\item  一维：$ s < \frac{1}{2} $
+\end{itemize}
+
+
+\subsection{数学和物理符号}
+
+基本符号
+$ \hat A , \propto, \rightarrow, \mathbb{R}$
+
+physics包中的符号
+\begin{equation}\label{key}
+ \dv{x}, \dv{\psi}{x}, \dv[2]{\psi}{x}, \pdv{x}, \pdv[2]{x} , \int \dd x
+\end{equation}
+\begin{equation}\label{key}
+\bra{\varphi}, \ket{\phi}, \ev{\hat p}
+\end{equation}  
+\begin{equation}\label{key}
+\qty(  \dfrac{x}{y} ), \qty[ \dfrac{x}{y} ], \qty{\dfrac{x}{y} }, \qty| \dfrac{x}{y} |
+\end{equation}
+
+\begin{equation}\label{key}
+\mqty( a & b \\ c & d ), \mqty| a & b \\ c & d |
+\end{equation}
+
+Braket包中的符号
+\begin{equation}\label{braket}
+\Braket{\phi | \pdv{x} | \phi}
+\end{equation}
+
+
+\subsection{插入block}
+
+
+
+\begin{note}
+	为什么我们需要特别引入Hermitian算符？\\
+	\lipsum[1]
+\end{note}
+
+\begin{warning}
+	但需要留意的是，\lipsum[2]
+\end{warning}
+\subsection{一些自定义命令}
+\emph{近乎}
+
+
+
+
+
+
+
+
+
+\section{杂项}
+脚注
+\begin{note}	
+	但是在量子力学中并不排除会使用某些不能归一化的波函数。\footnote{这是一个脚注}
+\end{note}
+
+
+
+
+引用公式，\eqref{braket}。需要多编译一次。
+
+
+
+\end{document}
