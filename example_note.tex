@@ -3,14 +3,17 @@
 \usepackage{qc}
 
 %---------设定区结束----------
+%---------预定设置区----------
+\title{%
+	\heiti \huge \vspace{-50pt} 量子化学原理与应用笔记 \\ \LaTeX 模板}
+\author{John Doe}
+%\institute{复旦大学}
+
+
 \begin{document}
 \bibliographystyle{JAmChemSoc}
 
-%---------预定设置区----------
-\title{%
-  \heiti \huge \vspace{-50pt} 量子化学原理与应用笔记 \\ \LaTeX 模板}
-
-  \maketitle
+\maketitle
 \vspace{-10pt}
 
 %\tableofcontents
@@ -60,9 +63,35 @@
 \subsection{数学和物理符号}
 
 基本符号
-$ \hat A , \propto, \rightarrow, \mathbb{R}$
+%\begin{note}
+\begin{lstlisting}[language=TeX]
+$ \hbar, \oint, \prod, \forall,  \nabla,\cdots,  \therefore $\\
+$ \hat A , \mathbb{R}, \Re, \ell$\\
+$ \neq, \gg, \ll, \approx, \propto, \rightarrow, \Rightarrow, \leftrightarrow$\\
+$ \sin, \arcsin, \sinh, \ln, \exp $
+\end{lstlisting}
+%\end{note}
+$ \hbar, \oint, \prod, \forall,  \nabla,\cdots,  \therefore $\\
+$ \hat A , \mathbb{R}, \Re, \ell$\\
+$ \neq, \gg, \ll, \approx, \propto, \rightarrow, \Rightarrow, \leftrightarrow$\\
+$ \sin, \arcsin, \sinh, \ln, \exp $
+\\
 
 physics包中的符号
+\begin{lstlisting}[language=TeX]
+\begin{equation}
+\dv{x}, \dv{\psi}{x}, \dv[2]{\psi}{x}, \pdv{x}, \pdv[2]{x} , \int \dd x
+\end{equation}
+\begin{equation}
+\bra{\varphi}, \ket{\phi}, \ev{\hat p}
+\end{equation}  
+\begin{equation}
+\qty(  \dfrac{x}{y} ), \qty[ \dfrac{x}{y} ], \qty{\dfrac{x}{y} }, \qty| \dfrac{x}{y} |
+\end{equation}
+\begin{equation}
+\mqty( a & b \\ c & d ), \mqty| a & b \\ c & d |
+\end{equation}
+\end{lstlisting}
 \begin{equation}\label{key}
  \dv{x}, \dv{\psi}{x}, \dv[2]{\psi}{x}, \pdv{x}, \pdv[2]{x} , \int \dd x
 \end{equation}
@@ -78,12 +107,18 @@ physics包中的符号
 \end{equation}
 
 Braket包中的符号
+\begin{lstlisting}[language=TeX]
+\begin{equation}\label{braket}
+\Braket{\phi | \pdv{x} | \phi}
+\end{equation}
+\end{lstlisting}
+
 \begin{equation}\label{braket}
 \Braket{\phi | \pdv{x} | \phi}
 \end{equation}
 
 
-\subsection{插入block}
+\section{插入block}
 
 
 
@@ -95,13 +130,6 @@ Braket包中的符号
 \begin{warning}
 	但需要留意的是，\lipsum[2]
 \end{warning}
-\subsection{一些自定义命令}
-\emph{近乎}
-
-
-
-
-
 
 
 
@@ -117,6 +145,6 @@ Braket包中的符号
 
 引用公式，\eqref{braket}。需要多编译一次。
 
-
+\section{一些自定义命令}
 
 \end{document}
