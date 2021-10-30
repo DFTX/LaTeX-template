@@ -43,6 +43,16 @@
 &= \dfrac{i\hbar}{2m} \qty[\Psi^*\pdv[2]{\Psi}{x} - \Psi\pdv[2]{\Psi^*}{x}] \notag\\
 &= \dfrac{i\hbar}{2m} \pdv{x} \qty[\Psi^*\pdv{\Psi}{x} - \Psi\pdv{\Psi^*}{x}]
 \end{align}
+单行多行混合公式
+\begin{equation}\label{eq.finite-square-potential}
+V(x) = \left\{
+\mqty{
+& 0, && x \in (-\infty, 0) && \text{Block I} \\
+& V_0, && x \in [0, l] && \text{Block II} \\
+& 0, && x \in (l, +\infty) && \text{Block III}
+}
+\right.
+\end{equation}
 有编号列表
 \begin{enumerate}[nosep]
 	\item 和与差
@@ -153,6 +163,28 @@ Braket包中的符号
 	\caption{这是两张图}
 \end{figure}
 
+\subsection{TikZ图}
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[scale=3,>={Stealth[round]}]
+	\draw [fill, AliceBlue] (-1.1, -0.2) -- (-1.1, 0) --++ (1.1, 0) --++ (0, 0.3) --++ (1, 0) --++ (0, -0.3) --++ (1.1, 0) --++ (0, -0.2);
+	% Axis
+	\draw [->] (-1.1, 0) -- (2.1, 0) node[right] {$x$};
+	\draw [->] (0, -0.2) -- (0, 0.8) node[above] {$V(x)$};
+	\node at (0, 0) [below left] {$O$};
+	% Potential
+	\draw [DarkSlateBlue,ultra thick,join=round] (-1, 0) --++ (1, 0) --++ (0, 0.3) --++ (1, 0) --++ (0, -0.3) node[below] {$l$} --++ (1, 0);
+	%\draw [Crimson,ultra thick,dotted] (-1.1, 0.2) -- (2.1, 0.2);
+	% Wave
+	\draw [->,Chocolate,decorate,decoration=snake] (-0.4, 0.7) node[left] {$A_1 e^{i k_1 x}$} --++ (0.3, 0);
+	\draw [->,DarkCyan,decorate,decoration=snake] (-0.1, 0.5) --++ (-0.3, 0) node[left] {$B_1 e^{- i k_1 x}$};
+	%\draw [->,Chocolate,decorate, rounded corners] (0.6, 0.7)  node[left] {$C_2 e^{\kappa_2 x}$}  arc[start angle=0, delta angle=90] -- ++(0.3, 0.2);
+	\draw [->,Chocolate,decorate] (0.6, 0.7)  node[left] {$C_2 e^{\kappa_2 x}$}  parabola ++(0.3, 0.15);
+	\draw [->,DarkCyan,decorate] (0.6, 0.5) node[left] {$D_2 e^{- \kappa_2 x}$} parabola ++ (0.3, -0.15) ;
+	\draw [->,Chocolate,decorate,decoration=snake] (1.6, 0.7) node[left] {$A_3 e^{i k_1 x}$} --++ (0.3, 0);
+	\draw [->,DarkCyan,decorate,decoration=snake,densely dotted] (1.9, 0.5) --++ (-0.3, 0) node[left] {$B_3 e^{- i k_1 x}$};
+	\end{tikzpicture}
+\end{figure}
 
 \section{杂项}
 脚注
